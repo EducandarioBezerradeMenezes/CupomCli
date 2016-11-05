@@ -1,0 +1,15 @@
+{
+  "name": "cupomcli",
+  "version": "0.1.0",
+  "description": "Frontend to CupomBot",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -o"
+  },
+  "keywords": [
+    "cupom",
+    "client"
+  ],
+  "author": "Mateus Oliveira Carvalho",
+  "license": "ISC"
+}
