@@ -11,10 +11,10 @@ angular.module("cupom").controller("logInCtrl", function($scope, $rootScope, use
     userApi.logIn(user).success(result =>{
 
       //Usuario não existe
-      if(result == "usuario") $scope.error = 1;
+      if(result == "user") $scope.error = result;
 
       //Senha incorreta
-      if(result == "senha") $scope.error = 2;
+      else if(result == "password") $scope.error = result;
 
       //Log In com sucesso
       else{
@@ -26,6 +26,11 @@ angular.module("cupom").controller("logInCtrl", function($scope, $rootScope, use
         $location.path("/Cupom");
       }
     });
+  }
+
+  //Cancela o Erro
+  $scope.cancel = function(){
+    $scope.error = undefined;
   }
 
   //Titulo da pagina

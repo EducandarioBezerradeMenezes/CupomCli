@@ -95,7 +95,7 @@ angular.module("cupom").controller("cupomCtrl", function($scope, $rootScope, bot
   var checkLogIn = function(){
 
     //Passa suas informações para o escopo
-    if($cookies.getObject("user")) $scope.user = $cookie.getObject("user");
+    if($cookies.getObject("user")) $scope.user = $cookies.getObject("user");
 
     //Redireciona para a tela de Log In
     else $location.path("/LogIn");
@@ -126,7 +126,7 @@ angular.module("cupom").controller("cupomCtrl", function($scope, $rootScope, bot
   $scope.captcha = {};
 
   //Verifica o Log In
-  //checkLogIn();
+  checkLogIn();
 
   //Mostra os estados de todos os cupons cadastrados
   getCupom();

@@ -1,2 +1,37 @@
 <!--Tela de Log-In-->
 <!--Realiza o Log In do usuario no sistema-->
+
+<!--LogIn-->
+<section class="jumbotron section-login" ng-keypress="$event.which==13 && logIn(user)">
+
+  <h1>Login</h1>
+
+  <!--Usuario e Senha-->
+  <input class="form-control register" tabindex=2 type="password" ng-model="user.password" placeholder="Digite sua senha"/>
+  <input class="form-control register" tabindex=1 type="text" ng-model="user.email" placeholder="Digite seu Email"/>
+
+
+  <!--Botão para Fazer Log-in-->
+  <button class="btn btn-primary btn-block" ng-click="logIn(user)">Login</button>
+
+  <!--Erros de LogIn-->
+  <section class="section-error">
+
+    <!--Usuario não Encontrado-->
+    <section class="alert alert-danger alert-dismissible" role="alert" ng-if="error=='user'">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="cancel()"><span aria-hidden="true">&times;</span></button>
+      <strong>Usuario Não Encontrado!</strong> Verifique a validade do email digitado.
+    </section>
+
+    <!--Senha Incorreta-->
+    <section class="alert alert-danger alert-dismissible" role="alert" ng-if="error=='password'">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="cancel()"><span aria-hidden="true">&times;</span></button>
+      <strong>Senha Incorreta!</strong> Verifique a validade da senha digitada.
+    </section>
+
+  </section>
+
+</section>
+
+<!--Imagem EBM-->
+<img class="img-logo" src="image/icon.png"/>
