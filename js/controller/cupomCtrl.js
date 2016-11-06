@@ -2,16 +2,18 @@
 //Controla a tela do cupom
 
 //Inserio o controller no modulo cupom
-angular.module("cupom").controller("cupomCtrl", function($scope, $rootScope, botApi, cupomApi, $cookies, $location){
+angular.module("cupom").controller("cupomCtrl", function($scope, $rootScope, botApi, cupomApi, $cookies, $location, $window){
 
   //Retorna a imagem do captcha a ser resolvido
-  $scope.getCaptcha =  function(){
+  $scope.getCaptcha =  function(value){
+
+    $scope.isCupom = value;
 
     //Recebe da API a URL da imagem
     botApi.getCaptcha().success(result =>{
 
       //Mostra a imagem
-      captcha.src = result;
+      $scope.image = result;
 
       //Captcha já foi resolvido
       if(result == "No Captcha") $scope.postCupom();
@@ -37,7 +39,7 @@ angular.module("cupom").controller("cupomCtrl", function($scope, $rootScope, bot
   }
 
   //Recebe informações dos estados dos cupons
-  $scope.getCupom = function(date){
+  var getCupom = function(date){
 
     //Delimita ou não a data dos cupons
     cupomApi.getCupom(date).success(result =>{
@@ -48,7 +50,7 @@ angular.module("cupom").controller("cupomCtrl", function($scope, $rootScope, bot
   }
 
   //Recebe informações dos estados das chaves
-  $scope.getChave = function(date){
+  var getChave = function(date){
 
     //Delimita ou não a data das chaves
     cupomApi.getChave(date).success(result =>{
@@ -56,6 +58,37 @@ angular.module("cupom").controller("cupomCtrl", function($scope, $rootScope, bot
       //Mostra as informações
       $scope.chaves = result;
     });
+  }
+
+  //Cupons e chaves de meses especificos
+  $scope.getInfo = function(date){
+
+    //Seprara mês e ano
+    if(date){
+      var month = date.split("/")[0];
+      var year  = date.split("/")[1];
+    }
+
+    //Objeto data
+    var date ={
+      year: year,
+      month: month,
+      show: true
+    };
+
+    //Envia data  para cupons e chaves
+    getCupom(date);
+    getChave(date);
+
+    //Limpa input de data
+    $scope.date= "";
+  }
+
+  //Cancela o cadatro
+  $scope.cancel = function(){
+
+    //Refresh na  tela
+    $window.location.reload();
   }
 
   //Verifica se existe um usuario logado
@@ -90,12 +123,15 @@ angular.module("cupom").controller("cupomCtrl", function($scope, $rootScope, bot
   //Chaves Mostradas
   $scope.chaves = {};
 
+  $scope.captcha = {};
+
   //Verifica o Log In
   //checkLogIn();
 
   //Mostra os estados de todos os cupons cadastrados
-  $scope.getCupom();
+  getCupom();
 
   //Mostra os estados de todas as chaves cadastradas
-  $scope.getChave();
+  getChave();
+
 });

@@ -1,5 +1,82 @@
 /*CSS da Aplicação*/
+body {
+  padding-top: 70px;
+  background-color: lightblue;
+}
+
+nav{
+  padding-right: 30px;
+}
 
 /*Tela Principal*/
+.section-info{
+  float: left;
+  padding: 5px 5px 5px;
+  width: 30%;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px #141414;
+    margin: 10px 10px 10px 10px;
+}
+
+.section-info-head{
+  display: inline-block;
+}
+
+
+.section-info-head:nth-child(2){
+  float:right;
+}
+
+.info-cupom{
+  text-shadow: 1px 0px 1px black;
+}
+
+.table-curved{
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px #141414;
+}
+
+.section-captcha{
+  width: 65%;
+  height: 650px;
+  float: right;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px #141414;
+  padding: 5px 5px 5px;
+  margin: 10px 10px 10px 10px;
+}
+
+.section-image{
+  width: 98%;
+  height: 550px;
+  float: right;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px #141414;
+  padding: 5px 5px 5px;
+  margin: 10px 10px 10px 10px;
+  background-color: white;
+  overflow-y: hidden;
+}
+
+.img-captcha{
+  width: 100%;
+  border-radius: 10px;
+}
+
+.img-logo{
+  display: block;
+  margin: auto;
+}
+
+.register{
+  margin: 5px 5px 5px 5px;
+  width:47.5%;
+  float: left;
+}
+
+.register:nth-child(2){
+
+  float: right;
+}
 
 /*Tela de Log-In*/
