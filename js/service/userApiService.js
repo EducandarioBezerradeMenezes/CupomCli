@@ -25,12 +25,14 @@ angular.module("cupom").factory("userApi", function($http, config){
   //Recupera senha de um usuario
   var _recoverUser = function(user){
 
-    return $http.delete(config.baseUrl + "/user", user);
+    return $http.put(config.baseUrl + "/logIn", user);
   }
 
   //Funções para serem usadas no controller
   return{
-    logIn:           _logIn,
-    changePassword:  _changePassword
+    postUser:       _postUser,
+    logIn:          _logIn,
+    changePassword: _changePassword,
+    recoverUser:    _recoverUser,
   };
 });

@@ -16,6 +16,12 @@ angular.module("cupom").config(function($routeProvider){
     controller:  "cupomCtrl",
   });
 
+  //Tela de Mudança de Senha
+  $routeProvider.when("/Password",{
+    templateUrl: "view/password.html",
+    controller:  "passwordCtrl",
+  });
+
   //Redireciona para tela Principal
   $routeProvider.otherwise({
     redirectTo: "/Cupom",

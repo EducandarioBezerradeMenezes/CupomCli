@@ -10,6 +10,9 @@ angular.module("cupom").controller("logInCtrl", function($scope, $rootScope, use
     //Envia um usuario e recebe suas informações ou erro
     userApi.logIn(user).success(result =>{
 
+      //Limpa Campo
+      $scope.user.password = "";
+
       //Usuario não existe
       if(result == "user") $scope.error = result;
 
@@ -25,6 +28,19 @@ angular.module("cupom").controller("logInCtrl", function($scope, $rootScope, use
         //Redireciona para a tela principal
         $location.path("/Cupom");
       }
+    });
+  }
+
+  //Envia um email com uma nova senha
+  $scope.sendEmail = function(user){
+
+    //Recupera o usuario a partir do email enviado
+    userApi.recoverUser(user).success(result =>{
+
+      console.log(result);
+
+      //Email incorreto
+      if(result == "user") $scope.error = result;
     });
   }
 
