@@ -28,13 +28,13 @@
 
    <ul>•	Log-In:
 
-   <p>Parte Responsavel pelas verificações de segurança da aplicação, como o proprio Log-In e os mecanismos de recuperação de senha;</p></ul>
+   <p>Parte Responsavel pelas verificações de segurança da aplicação, como o proprio Log-In e os mecanismos de recuperação e alteração de senha;</p></ul>
 
    <ul>•	Controle:
 
    <p>Gerencia as informações disponibilizadas pela API e faz o controle das operações do BOT, inserindo no site da receita federal os cupons e chaves cadastrados no sistema EBM NFP.</p></ul>
 
-Para a utilização deste aplicativo é necessario se ter instalado a ferramenta Node.js e seu gerenciador de packages NPM, com a instalação de ambas a ferramentas deve-se então:
+</p>Para a utilização deste aplicativo é necessario se ter instalado a ferramenta Node.js e seu gerenciador de packages NPM, com a instalação de ambas a ferramentas deve-se então:</p>
 
   1. A partir do console do sistema operacional instalar o modulo "http-server" globalmente com o seguinte comando: "npm install http-server -g";
 
