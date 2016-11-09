@@ -29,7 +29,7 @@
         <!--Pesquisar por mês-->
         <section class="input-group">
 
-          <input type="text" class="form-control" placeholder="MM/AAAA" ng-model="date" ui-mask="99/9999"
+          <input type="text" class="form-control" placeholder="Data: MM/AAAA" ng-model="date" ui-mask="99/9999"
           ng-keypress="$event.which==13 && (date.length==7 || date.length==0 || date.length==null) && getInfo(date)"/>
 
           <span class="input-group-btn">
@@ -103,7 +103,7 @@
     <button class="btn btn-default register" ng-if="!image" ng-click="getCaptcha(false)">Cadastrar Chaves</button>
 
     <!--Digita o valor do captcha-->
-    <input  class="form-control register" ng-if="image" type="text" ng-model="captcha.valor" ui-mask="aaaa"/>
+    <input  class="form-control register" ng-if="image" type="text" ng-model="captcha.valor" ui-mask="zzzz" placeholder="Insira o Captcha"/>
 
     <!--Cadastra-->
     <section class="register">

@@ -37,10 +37,11 @@ angular.module("cupom").controller("logInCtrl", function($scope, $rootScope, use
     //Recupera o usuario a partir do email enviado
     userApi.recoverUser(user).success(result =>{
 
-      console.log(result);
-
-      //Email incorreto
+      //Email invalido
       if(result == "user") $scope.error = result;
+
+      //Email valido
+      else $scope.error = result;
     });
   }
 

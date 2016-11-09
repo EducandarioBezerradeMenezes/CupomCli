@@ -30,6 +30,12 @@
       <strong>Senha Incorreta!</strong> Verifique a validade da senha digitada.
     </section>
 
+    <!--Senha Incorreta-->
+    <section class="alert alert-success alert-dismissible" role="alert" ng-if="error=='OK'">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="cancel()"><span aria-hidden="true">&times;</span></button>
+      <strong>Email enviado!</strong> Verifique o email recebido para encontrar sua nova senha.
+    </section>
+
   </section>
 
 </section>
