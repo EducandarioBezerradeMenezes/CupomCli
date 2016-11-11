@@ -50,7 +50,15 @@ angular.module("cupom").controller("logInCtrl", function($scope, $rootScope, use
     $scope.error = undefined;
   }
 
+  //Verifica se existe um usuario logado
+  var checkLogIn = function(){
+
+    //Entra na tela principal quando ja logado
+    if($cookies.getObject("user")) $location.path("/Cupom");
+  }
+
+  checkLogIn();
+
   //Titulo da pagina
   $rootScope.title = "Cupom - LogIn";
-
 });

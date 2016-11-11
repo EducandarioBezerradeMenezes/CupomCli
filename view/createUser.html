@@ -1,0 +1,55 @@
+<!--Tela de Criação de Usuario-->
+<!--Cria um novo usuario dentro do sistema-->
+
+<!--Criação-->
+<section class="jumbotron section-login" ng-keypress="$event.which==13 && createUser(user)">
+
+  <h1>Criar Usuário</h1>
+
+  <!--Nome e Email-->
+  <input class="form-control register" tabindex=1 type="text" ng-model="user.name" placeholder="Digite o nome do usuario" style="float: left"/>
+  <input class="form-control register" tabindex=2 type="text" ng-model="user.email" placeholder="Digite o email do usuario" style="float: right"/>
+
+  <!--Senha-->
+  <input class="form-control register" tabindex=3 type="password" ng-model="user.password.first" placeholder="Digite uma senha" style="float: left"/>
+  <input class="form-control register" tabindex=4 type="password" ng-model="user.password.second" placeholder="Digite novamente a senha" style="float: right"/>
+
+
+  <!--Botões de Criação-->
+  <button class="btn btn-primary btn-block" ng-click="createUser(user)" ng-disabled="!user.password.first || !user.password.second || !user.name || !user.email">Criar Usuario</button>
+  <a class="btn btn-danger btn-block" href="#/Cupom">Cancelar</a>
+
+  <!--Erros de Criação-->
+  <section class="section-error">
+
+    <!--Usuario Cirado-->
+    <section class="alert alert-success alert-dismissible" role="alert" ng-if="result=='OK'">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="cancel()"><span aria-hidden="true">&times;</span></button>
+      <strong>Usuario Criado!</strong> Usuario adicionado ao sistema com sucesso.
+    </section>
+
+    <!--Usuario já existe-->
+    <section class="alert alert-danger alert-dismissible" role="alert" ng-if="result=='user'">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="cancel()"><span aria-hidden="true">&times;</span></button>
+      <strong>Usuário Duplicado!</strong> Este usuario já existe, use outro nome.
+    </section>
+
+    <!--Senhas divergente-->
+    <section class="alert alert-danger alert-dismissible" role="alert" ng-if="result=='password'">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="cancel()"><span aria-hidden="true">&times;</span></button>
+      <strong>Senha Divergente!</strong> Existe uma divergencia entre as duas senhas digitadas.
+    </section>
+
+
+    <!--Campos Vazios-->
+    <section class="alert alert-danger alert-dismissible" role="alert" ng-if="result=='fields'">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="cancel()"><span aria-hidden="true">&times;</span></button>
+      <strong>Campos Vazios!</strong> Insira todas as informações necessarias.
+    </section>
+
+  </section>
+
+</section>
+
+<!--Imagem EBM-->
+<img class="img-logo" src="image/icon.png"/>

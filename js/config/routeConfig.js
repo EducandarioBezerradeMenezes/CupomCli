@@ -22,6 +22,12 @@ angular.module("cupom").config(function($routeProvider){
     controller:  "passwordCtrl",
   });
 
+  //Tela de Criação de Usuário
+  $routeProvider.when("/CreateUser",{
+    templateUrl: "view/createUser.html",
+    controller:  "createUserCtrl",
+  });
+
   //Redireciona para tela Principal
   $routeProvider.otherwise({
     redirectTo: "/Cupom",

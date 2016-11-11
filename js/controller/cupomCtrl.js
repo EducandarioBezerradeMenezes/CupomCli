@@ -25,7 +25,7 @@ angular.module("cupom").controller("cupomCtrl", function($scope, $rootScope, bot
 
     //Envia o captcha a API para o cadastro de cupons
     botApi.postCupom(captcha).success(result =>{
-
+      $window.location.reload();
     });
   }
 
@@ -34,7 +34,7 @@ angular.module("cupom").controller("cupomCtrl", function($scope, $rootScope, bot
 
     //Envia o captcha a API para o cadastro de chaves
     botApi.postChave(captcha).success(result =>{
-
+      $window.location.reload();
     });
   }
 
