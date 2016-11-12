@@ -1,3 +1,24 @@
+/* reset */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+img {
+  max-height: 100%;
+}
+
 /*CSS da Aplicação*/
 body {
   padding-top: 70px;
@@ -19,15 +40,14 @@ nav{
 }
 
 .section-info-head{
-  display: inline-block;
-}
-
-.section-info-head:nth-child(2){
-  float:right;
+  display: flex;
+  flex-flow: row;
 }
 
 .info-cupom{
-  text-shadow: 1px 0px 1px black;
+  font-size: 3vh;
+  font-style: normal;
+  font-family: arial;
 }
 
 .table-curved{
@@ -37,7 +57,7 @@ nav{
 
 .section-captcha{
   width: 65%;
-  height: 650px;
+  height: 85vh;
   float: right;
   border-radius: 10px;
   box-shadow: 1px 1px 1px 1px #141414;
@@ -46,25 +66,26 @@ nav{
 }
 
 .section-image{
-  width: 98%;
-  height: 550px;
-  float: right;
+  width: 97%;
+  height: 70vh;
   border-radius: 10px;
   box-shadow: 1px 1px 1px 1px #141414;
   padding: 5px 5px 5px;
   margin: 10px 10px 10px 10px;
   background-color: white;
-  overflow-y: auto;
 }
 
 .img-captcha{
-  width: 100%;
+  min-width: 100vh;
+  margin-left: 15vh;
   border-radius: 10px;
 }
 
 .img-logo{
   display: block;
   margin: 20px auto;
+  max-width: 25vh;
+  max-height: 25vh;
 }
 
 .register{
@@ -79,13 +100,34 @@ nav{
 
 /*Tela de Log-In*/
 .section-login{
-  padding: 50px 50px 50px 50px;
-  width: 70%;
-  margin: 0 auto;
-  border-radius: 10px;
-  box-shadow: 1px 1px 1px 1px #141414
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  padding-left: 20vh;
+  padding-right: 20vh;
+  margin-top: 5vh;
+  margin-left: 40vh;
+  margin-right: 40vh;
+  border-radius: 20px;
+  box-shadow: 1px 1px 1px 1px #141414;
+  text-align: center;
 }
 
 .section-error{
   padding: 20px 20px 20px 20px;
+}
+
+/* Tode */
+
+.section-login-p{
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+.section-cupom-info{
+  flex-flow: row;
+}
+
+.section-flex{
+  flex-flow: row;
 }

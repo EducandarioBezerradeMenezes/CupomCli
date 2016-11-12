@@ -1,44 +1,45 @@
 <!--Tela de Log-In-->
 <!--Realiza o Log In do usuario no sistema-->
+<section class="section-login-p">
+  <!--LogIn-->
+  <section class="jumbotron section-login" ng-keypress="$event.which==13 && logIn(user)">
 
-<!--LogIn-->
-<section class="jumbotron section-login" ng-keypress="$event.which==13 && logIn(user)">
+    <h1>Login</h1>
 
-  <h1>Login</h1>
-
-  <!--Usuario e Senha-->
-  <input class="form-control register" tabindex=1 type="text" ng-model="user.email" placeholder="Digite seu Email"        style="float: left"/>
-  <input class="form-control register" tabindex=2 type="password" ng-model="user.password" placeholder="Digite sua senha" style="float: right"/>
+    <!--Usuario e Senha-->
+    <input class="form-control register" tabindex=1 type="text" ng-model="user.email" placeholder="Digite seu Email"        style="float: left"/>
+    <input class="form-control register" tabindex=2 type="password" ng-model="user.password" placeholder="Digite sua senha" style="float: right"/>
 
 
-  <!--Botões de LogIn-->
-  <button class="btn btn-primary btn-block" ng-click="logIn(user)">Login</button>
-  <button class="btn btn-warning btn-block" ng-click="sendEmail(user)" ng-disabled="!user.email">Esqueceu a senha</button>
+    <!--Botões de LogIn-->
+    <button class="btn btn-primary btn-block" ng-click="logIn(user)">Login</button>
+    <button class="btn btn-warning btn-block" ng-click="sendEmail(user)" ng-disabled="!user.email">Esqueceu a senha</button>
 
-  <!--Erros de LogIn-->
-  <section class="section-error">
+    <!--Erros de LogIn-->
+    <section class="section-error">
 
-    <!--Usuario não Encontrado-->
-    <section class="alert alert-danger alert-dismissible" role="alert" ng-if="error=='user'">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="cancel()"><span aria-hidden="true">&times;</span></button>
-      <strong>Usuario Não Encontrado!</strong> Verifique a validade do email digitado.
-    </section>
+      <!--Usuario não Encontrado-->
+      <section class="alert alert-danger alert-dismissible" role="alert" ng-if="error=='user'">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="cancel()"><span aria-hidden="true">&times;</span></button>
+        <strong>Usuario Não Encontrado!</strong> Verifique a validade do email digitado.
+      </section>
 
-    <!--Senha Incorreta-->
-    <section class="alert alert-danger alert-dismissible" role="alert" ng-if="error=='password'">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="cancel()"><span aria-hidden="true">&times;</span></button>
-      <strong>Senha Incorreta!</strong> Verifique a validade da senha digitada.
-    </section>
+      <!--Senha Incorreta-->
+      <section class="alert alert-danger alert-dismissible" role="alert" ng-if="error=='password'">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="cancel()"><span aria-hidden="true">&times;</span></button>
+        <strong>Senha Incorreta!</strong> Verifique a validade da senha digitada.
+      </section>
 
-    <!--Senha Incorreta-->
-    <section class="alert alert-success alert-dismissible" role="alert" ng-if="error=='OK'">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="cancel()"><span aria-hidden="true">&times;</span></button>
-      <strong>Email enviado!</strong> Verifique o email recebido para encontrar sua nova senha.
+      <!--Senha Incorreta-->
+      <section class="alert alert-success alert-dismissible" role="alert" ng-if="error=='OK'">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="cancel()"><span aria-hidden="true">&times;</span></button>
+        <strong>Email enviado!</strong> Verifique o email recebido para encontrar sua nova senha.
+      </section>
+
     </section>
 
   </section>
 
+  <!--Imagem EBM-->
+  <img class="img-logo" src="image/icon.png"/>
 </section>
-
-<!--Imagem EBM-->
-<img class="img-logo" src="image/icon.png"/>
