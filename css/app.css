@@ -1,133 +1,23 @@
-/* reset */
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-ul,
-li {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-  color: #000;
-}
-
-img {
-  max-height: 100%;
-}
-
 /*CSS da Aplicação*/
 body {
   padding-top: 70px;
   background-color: lightblue;
 }
 
-nav{
-  padding-right: 30px;
-}
 
-/*Tela Principal*/
-.section-info{
-  float: left;
-  padding: 5px 5px 5px;
-  width: 30%;
-  border-radius: 10px;
-  box-shadow: 1px 1px 1px 1px #141414;
-    margin: 10px 10px 10px 10px;
-}
-
-.section-info-head{
-  display: flex;
-  flex-flow: row;
-}
-
-.info-cupom{
-  font-size: 3vh;
-  font-style: normal;
-  font-family: arial;
-}
-
-.table-curved{
-  border-radius: 10px;
-  box-shadow: 1px 1px 1px 1px #141414;
-}
-
-.section-captcha{
-  width: 65%;
-  height: 85vh;
-  float: right;
-  border-radius: 10px;
-  box-shadow: 1px 1px 1px 1px #141414;
-  padding: 5px 5px 5px;
-  margin: 10px 10px 10px 10px;
-}
-
-.section-image{
-  width: 97%;
-  height: 70vh;
-  border-radius: 10px;
-  box-shadow: 1px 1px 1px 1px #141414;
-  padding: 5px 5px 5px;
-  margin: 10px 10px 10px 10px;
+.image-container {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 400px;
   background-color: white;
 }
 
-.img-captcha{
-  min-width: 100vh;
-  margin-left: 15vh;
-  border-radius: 10px;
-}
-
-.img-logo{
+.img{
   display: block;
-  margin: 20px auto;
-  max-width: 25vh;
-  max-height: 25vh;
+  border-radius: 10px;
+  margin: auto;
 }
 
-.register{
-  margin: 5px 5px 5px 5px;
-  width:47.5%;
-  float: left;
-}
-
-.register:nth-child(2){
-  float: right;
-}
-
-/*Tela de Log-In*/
-.section-login{
-  padding-top: 5vh;
-  padding-bottom: 5vh;
-  padding-left: 20vh;
-  padding-right: 20vh;
-  margin-top: 5vh;
-  margin-left: 40vh;
-  margin-right: 40vh;
-  border-radius: 20px;
-  box-shadow: 1px 1px 1px 1px #141414;
-  text-align: center;
-}
-
-.section-error{
-  padding: 20px 20px 20px 20px;
-}
-
-/* Tode */
-
-.section-login-p{
-  display: flex;
-  flex-flow: column;
-  min-height: 100vh;
-}
-
-.section-cupom-info{
-  flex-flow: row;
-}
-
-.section-flex{
-  flex-flow: row;
+.form-captcha {
+  padding: 10px;
 }

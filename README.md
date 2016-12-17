@@ -58,7 +58,7 @@
 
   3. Instalar também o modulo "http-server" globalmente com o seguinte comando: ```npm install http-server -g```;
 
-  4. Com o módulo "http-server" instalado deve-se entrar na pasta do projeto, utilizando o console, e colocar o projeto no ar com o comando: ```http-server -o```;
+  4. Com o módulo "http-server" instalado deve-se entrar na pasta do projeto, utilizando o console, e colocar o projeto no ar com o comando: ```npm start```;
 
   5. Assim que o projeto estiver no ar uma janela de um browser será aberta em [localhost](http://localhost:8080) mostrando a tela de Log-In do sistema, onde deverá ser informado um email e senha;
 
