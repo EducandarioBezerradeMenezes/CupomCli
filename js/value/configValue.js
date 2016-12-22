@@ -5,5 +5,5 @@
 angular.module("cupom").value("config",{
 
   //URL API-BOT
-  baseUrl:"http://127.0.0.1:8000",
+  baseUrl:"http://45.55.197.218:80085",
 });
