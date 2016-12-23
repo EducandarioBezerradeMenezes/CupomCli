@@ -1,0 +1,28 @@
+{
+  "name": "cupomcli",
+  "description": "Frontend to CupomBot",
+  "main": "index.html",
+  "authors": [
+    "Mateus Oliveira Carvalho"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "cupom",
+    "client"
+  ],
+  "homepage": "https://github.com/EducandarioBezerradeMenezes/CupomCli",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7",
+    "angular-cookies": "^1.5.8",
+    "angular-route": "^1.5.8"
+  }
+}

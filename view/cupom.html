@@ -1,122 +1,121 @@
 <!--Tela Principal-->
 <!--Controla o BOT e mostra informações dos cupons-->
-<section class="section-principal">
-  <!--Login e Nome da Aplicação-->
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <a class="navbar-brand" href="#/Cupom">EBM NFP</a>
-    <ul class="nav navbar-nav navbar-right">
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{user.name}} <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#/CreateUser">Criar Usuário</a></li>
-          <li><a href="#/Password">Mudar Senha</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="#" ng-click="logOut()">Log Out</a></li>
-        </ul>
-      </li>
-    </ul>
-      <p class="navbar-text navbar-right">Entrou como</p>
-  </nav>
 
-  <!--Informações de Cupons e Chaves-->
-  <section class="panel panel-default section-info">
+<!--Login e Nome da Aplicação-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <a class="navbar-brand" href="#/Cupom">Doe Educandário</a>
+  <ul class="nav navbar-nav navbar-right">
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{user.name}} <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="#/CreateUser">Criar Usuário</a></li>
+        <li><a href="#/Password">Mudar Senha</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#" ng-click="logOut()">Log Out</a></li>
+      </ul>
+    </li>
+  </ul>
+  <p class="navbar-text navbar-right">Entrou como</p>
+</nav>
 
-    <section class="panel-heading section-info-princ">
-      <section class="section-info-head">
-      <h3 class="info-cupom">Informações:</h3>
-      </section>
-        <section class="section-info-head">
+<!--Informações de Cupons e Chaves-->
+<section class="col-sm-4 col-sm-offset-1 col-xs-12 jumbotron">
 
-          <!--Pesquisar por mês-->
-          <section class="input-group">
+  <div class="row">
 
-            <input type="text" class="form-control" placeholder="Data: MM/AAAA" ng-model="date" ui-mask="99/9999"
-            ng-keypress="$event.which==13 && (date.length==7 || date.length==0 || date.length==null) && getInfo(date)"/>
+    <div class="col-sm-5 col-xs-12">
+      <h3><strong>Informações:</strong></h3>
+    </div>
 
-            <span class="input-group-btn">
-              <button class="btn btn-default" type="button" ng-disabled="date.length!=7 && date.length!=0 && date.length!=null" ng-click="getInfo(date)">Pesquisar</button>
-            </span>
-          </section>
+    <div class="col-sm-6 col-xs-12">
+      <div class="form-group">
 
-        </section>
-    </section>
+        <div class="col-xs-10">
+          <input type="text" ui-mask="19/2999" ng-model="date" class="form-control" placeholder="Cupons por Mes">
+        </div>
+        <div class="col-xs-2">
+          <button class="btn btn-primary" type="button" ng-click="getInfo(date)"><i class="glyphicon glyphicon-search"></i></button>
+        </div>
 
-    <!--Tabelas-->
-    <section class="panel-body section-cupom-info">
+      </div>
+    </div>
 
-      <!--Tabela de Cupons-->
-      <table class="table table-striped table-curved" ng-show="cupons[0]">
-        <tr>
-          <th class="info-cupom">Cupom</th>
-          <th></th>
-          <th ng-if="cupons[0].month"></th>
-        </tr>
-        <tr>
-          <td class="info-cupom">Estado</td>
-          <td class="info-cupom">Quantidade</td>
-          <td class="info-cupom" ng-if="cupons[0].month">Mês/Ano</td>
-        </tr>
+  <!--Tabelas-->
+  <div class="panel-body section-cupom-info">
 
-        <tr ng-repeat="cupom in cupons">
-          <td>{{cupom.estado | estado}}</td>
-          <td>{{cupom.quantity}}</td>
-          <td ng-if="cupom.month">{{cupom.month | month}}/{{cupom.year}}</td>
-        </tr>
+    <!--Tabela de Cupons-->
+    <table class="table table-striped table-curved" ng-show="cupons[0]">
+      <tr>
+        <th class="info-cupom">Cupom</th>
+        <th></th>
+        <th ng-if="cupons[0].month"></th>
+      </tr>
+      <tr>
+        <td class="info-cupom">Estado</td>
+        <td class="info-cupom">Quantidade</td>
+        <td class="info-cupom" ng-if="cupons[0].month">Mês/Ano</td>
+      </tr>
 
-      </table>
+      <tr ng-repeat="cupom in cupons">
+        <td>{{cupom.estado | estado}}</td>
+        <td>{{cupom.quantity}}</td>
+        <td ng-if="cupom.month">{{cupom.month | month}}/{{cupom.year}}</td>
+      </tr>
 
-      <!--Tabela de Chaves-->
-      <table class="table table-striped table-curved" ng-show="chaves[0]">
-        <tr>
-          <th class="info-cupom">Chave</th>
-          <th></th>
-          <th ng-if="chaves[0].month"></th>
-        </tr>
+    </table>
 
-        <tr>
-          <td class="info-cupom">Estado</td>
-          <td class="info-cupom">Quantidade</td>
-          <td class="info-cupom" ng-if="chaves[0].month">Mês/Ano</td>
-        </tr>
+    <!--Tabela de Chaves-->
+    <table class="table table-striped table-curved" ng-show="chaves[0]">
+      <tr>
+        <th class="info-cupom">Chave</th>
+        <th></th>
+        <th ng-if="chaves[0].month"></th>
+      </tr>
 
-        <tr ng-repeat="chave in chaves">
-          <td>{{chave.estado | estado}}</td>
-          <td>{{chave.quantity}}</td>
-          <td ng-if="chave.month">{{cupom.month | month}}/{{cupom.year}}</td>
-        </tr>
+      <tr>
+        <td class="info-cupom">Estado</td>
+        <td class="info-cupom">Quantidade</td>
+        <td class="info-cupom" ng-if="chaves[0].month">Mês/Ano</td>
+      </tr>
 
-      </table>
-    </section>
-  </section>
+      <tr ng-repeat="chave in chaves">
+        <td>{{chave.estado | estado}}</td>
+        <td>{{chave.quantity}}</td>
+        <td ng-if="chave.month">{{chave.month | month}}/{{chave.year}}</td>
+        <td>{{chave}}</td>
+      </tr>
 
-  <!--Resolução de captcha-->
-  <section class="jumbotron section-captcha">
+    </table>
+  </div>
+</section>
 
-    <!--Imagem do Captcha-->
-    <section class="section-image">
-      <img name="image" ng-src="{{image || 'image/icon.png'}}" ng-class="{'img-captcha': image, 'img-logo': !image}"/>
-    </section>
+<!--Resolução de captcha-->
+<section class="col-sm-5 col-sm-offset-1 col-xs-12 jumbotron">
 
-    <section>
+  <!--Imagem do Captcha-->
+  <div class=" image-container">
+    <img class="img" name="image" ng-src="{{image || 'image/icon.png'}}"/>
+  </div>
 
-      <!--Escolhe o cadastro e recebe o captcha-->
-      <button class="btn btn-default register" ng-if="!image" ng-click="getCaptcha(true)">Cadastrar Cupons</button>
-      <button class="btn btn-default register" ng-if="!image" ng-click="getCaptcha(false)">Cadastrar Chaves</button>
+  <div class="row form-captcha">
 
-      <!--Digita o valor do captcha-->
-      <input  class="form-control register" ng-if="image" type="text" ng-model="captcha.valor" ui-mask="zzzz" placeholder="Insira o Captcha"/>
+    <!--Escolhe o cadastro e recebe o captcha-->
+    <button class="btn btn-default col-xs-6" ng-if="!image" ng-click="getCaptcha(true)">Cadastrar Cupons</button>
+    <button class="btn btn-default col-xs-6" ng-if="!image" ng-click="getCaptcha(false)">Cadastrar Chaves</button>
 
-      <!--Cadastra-->
-      <section class="register">
+    <!--Digita o valor do captcha-->
 
-        <!--De acordo com a escolha-->
-        <button class="btn btn-default register" ng-if="image && isCupom"  ng-click="postCupom(captcha)" ng-disabled="captcha.valor.length!=4">Cadastrar Cupons</button>
-        <button class="btn btn-default register" ng-if="image && !isCupom" ng-click="postChave(captcha)" ng-disabled="captcha.valor.length!=4">Cadastrar Chaves</button>
+      <div class="form-group col-xs-6">
+        <input  class="form-control " ng-if="image" type="text" ng-model="captcha.valor" ui-mask="zzzz" placeholder="Insira o Captcha"/>
+      </div>
 
-        <!--Botão de Cancelar-->
-        <button class="btn btn-danger register" ng-if="image" ng-click="cancel()">Cancelar</button>
+      <!--De acordo com a escolha-->
+      <button class="btn btn-default col-xs-3" ng-if="image && isCupom"  ng-click="postCupom(captcha)" ng-disabled="captcha.valor.length!=4">Cadastrar Cupons</button>
+      <button class="btn btn-default col-xs-3" ng-if="image && !isCupom" ng-click="postChave(captcha)" ng-disabled="captcha.valor.length!=4">Cadastrar Chaves</button>
 
-      </section>
-    </section>
-  </section>
+      <!--Botão de Cancelar-->
+      <button class="btn btn-danger col-xs-3" ng-if="image" ng-click="cancel()">Cancelar</button>
+
+    </div>
+  </div>
 </section>

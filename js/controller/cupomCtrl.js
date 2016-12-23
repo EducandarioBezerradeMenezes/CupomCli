@@ -63,22 +63,16 @@ angular.module("cupom").controller("cupomCtrl", function($scope, $rootScope, bot
   //Cupons e chaves de meses especificos
   $scope.getInfo = function(date){
 
-    //Seprara mês e ano
-    if(date){
-      var month = date.split("/")[0];
-      var year  = date.split("/")[1];
-    }
-
-    //Objeto data
-    var date ={
-      year: year,
-      month: month,
+    //Objeto Mês e Ano
+    const monthYear = {
+      month: date.split('/')[0],
+      year: date.split('/')[1],
       show: true
     };
 
     //Envia data  para cupons e chaves
-    getCupom(date);
-    getChave(date);
+    getCupom(monthYear);
+    getChave(monthYear);
 
     //Limpa input de data
     $scope.date= "";
@@ -112,7 +106,7 @@ angular.module("cupom").controller("cupomCtrl", function($scope, $rootScope, bot
   }
 
   //Titulo da pagina
-  $rootScope.title = "Cupom - Info";
+  $rootScope.title = "Controle de Cupons";
 
   //Usuario Logado
   $scope.user = {};
@@ -123,7 +117,11 @@ angular.module("cupom").controller("cupomCtrl", function($scope, $rootScope, bot
   //Chaves Mostradas
   $scope.chaves = {};
 
+  //Informações do Captcha
   $scope.captcha = {};
+
+  //Data Pesquisada
+  $scope.date = "";
 
   //Verifica o Log In
   checkLogIn();

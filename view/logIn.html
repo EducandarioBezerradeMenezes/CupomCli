@@ -1,45 +1,52 @@
 <!--Tela de Log-In-->
 <!--Realiza o Log In do usuario no sistema-->
-<section class="section-login-p">
-  <!--LogIn-->
-  <section class="jumbotron section-login" ng-keypress="$event.which==13 && logIn(user)">
 
-    <h1>Login</h1>
+<!--LogIn-->
+<div class="jumbotron col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1" ng-keypress="$event.which==13 && logIn(user)">
 
-    <!--Usuario e Senha-->
-    <input class="form-control register" tabindex=1 type="text" ng-model="user.email" placeholder="Digite seu Email"        style="float: left"/>
-    <input class="form-control register" tabindex=2 type="password" ng-model="user.password" placeholder="Digite sua senha" style="float: right"/>
+  <h1>Login</h1>
+
+  <!--Usuario e Senha-->
+
+      <div class="form-group col-sm-6 col-xs-12">
+        <input class="form-control" tabindex=1 type="email" ng-model="user.email" placeholder="Digite seu Email"/>
+      </div>
+
+      <div class="form-group col-sm-6 col-xs-12">
+        <input class="form-control" tabindex=2 type="password" ng-model="user.password" placeholder="Digite sua senha"/>
+      </div>
 
 
     <!--Botões de LogIn-->
-    <button class="btn btn-primary btn-block" ng-click="logIn(user)">Login</button>
-    <button class="btn btn-warning btn-block" ng-click="sendEmail(user)" ng-disabled="!user.email">Esqueceu a senha</button>
+    <div class="col-sm-12 form-group">
+      <button class="btn btn-primary btn-block" ng-click="logIn(user)">Login</button>
+      <button class="btn btn-warning btn-block" ng-click="sendEmail(user)" ng-disabled="!user.email">Esqueceu a senha</button>
+    </div>
 
-    <!--Erros de LogIn-->
-    <section class="section-error">
+  <!--Erros de LogIn-->
+  <div>
 
-      <!--Usuario não Encontrado-->
-      <section class="alert alert-danger alert-dismissible" role="alert" ng-if="error=='user'">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="cancel()"><span aria-hidden="true">&times;</span></button>
-        <strong>Usuario Não Encontrado!</strong> Verifique a validade do email digitado.
-      </section>
+    <!--Usuario não Encontrado-->
+    <div class="alert alert-danger alert-dismissible" role="alert" ng-if="error=='user'">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="cancel()"><span aria-hidden="true">&times;</span></button>
+      <strong>Usuario Não Encontrado!</strong> Verifique a validade do email digitado.
+    </div>
 
-      <!--Senha Incorreta-->
-      <section class="alert alert-danger alert-dismissible" role="alert" ng-if="error=='password'">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="cancel()"><span aria-hidden="true">&times;</span></button>
-        <strong>Senha Incorreta!</strong> Verifique a validade da senha digitada.
-      </section>
+    <!--Senha Incorreta-->
+    <div class="alert alert-danger alert-dismissible" role="alert" ng-if="error=='password'">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="cancel()"><span aria-hidden="true">&times;</span></button>
+      <strong>Senha Incorreta!</strong> Verifique a validade da senha digitada.
+    </div>
 
-      <!--Senha Incorreta-->
-      <section class="alert alert-success alert-dismissible" role="alert" ng-if="error=='OK'">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="cancel()"><span aria-hidden="true">&times;</span></button>
-        <strong>Email enviado!</strong> Verifique o email recebido para encontrar sua nova senha.
-      </section>
+    <!--Senha Incorreta-->
+    <div class="alert alert-success alert-dismissible" role="alert" ng-if="error=='OK'">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="cancel()"><span aria-hidden="true">&times;</span></button>
+      <strong>Email enviado!</strong> Verifique o email recebido para encontrar sua nova senha.
+    </div>
 
-    </section>
+  </div>
 
-  </section>
+</div>
 
-  <!--Imagem EBM-->
-  <img class="img-logo" src="image/icon.png"/>
-</section>
+<!--Imagem EBM-->
+<img class=" col-xs-2 col-xs-offset-5" src="image/icon.png"/>

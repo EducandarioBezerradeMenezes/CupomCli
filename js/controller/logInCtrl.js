@@ -57,7 +57,11 @@ angular.module("cupom").controller("logInCtrl", function($scope, $rootScope, use
     if($cookies.getObject("user")) $location.path("/Cupom");
   }
 
+  //Verifica se já foi feito o login
   checkLogIn();
+
+  //Definindo Usuario
+  $scope.user = {};
 
   //Titulo da pagina
   $rootScope.title = "Cupom - LogIn";
