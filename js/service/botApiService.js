@@ -7,7 +7,9 @@ angular.module("cupom").factory("botApi", function($http, config){
   //Recebe endereço de imagem com captcha
   var _getCaptcha  = function(){
 
-    return $http.get(config.baseUrl + "/Captcha");
+    return $http.get(config.baseUrl + "/Captcha").then((result) => {
+      return config.baseUrl + result;
+    });
   }
 
   //Envia o Captcha para iniciar cadastro de chaves

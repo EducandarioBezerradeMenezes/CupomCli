@@ -10,7 +10,7 @@ angular.module("cupom").controller("cupomCtrl", function($scope, $rootScope, bot
     $scope.isCupom = value;
 
     //Recebe da API a URL da imagem
-    botApi.getCaptcha().success(result =>{
+    botApi.getCaptcha().then(result =>{
 
       //Mostra a imagem
       $scope.image = result;
@@ -24,8 +24,10 @@ angular.module("cupom").controller("cupomCtrl", function($scope, $rootScope, bot
   $scope.postCupom = function(captcha){
 
     //Envia o captcha a API para o cadastro de cupons
-    botApi.postCupom(captcha).success(result =>{
+    botApi.postCupom(captcha).then(result =>{
       $window.location.reload();
+    }).catch((error) => {
+      alert(error);
     });
   }
 
@@ -33,8 +35,10 @@ angular.module("cupom").controller("cupomCtrl", function($scope, $rootScope, bot
   $scope.postChave = function(captcha){
 
     //Envia o captcha a API para o cadastro de chaves
-    botApi.postChave(captcha).success(result =>{
+    botApi.postChave(captcha).then(result =>{
       $window.location.reload();
+    }).catch((error) => {
+      alert(error)
     });
   }
 
@@ -42,10 +46,12 @@ angular.module("cupom").controller("cupomCtrl", function($scope, $rootScope, bot
   var getCupom = function(date){
 
     //Delimita ou não a data dos cupons
-    cupomApi.getCupom(date).success(result =>{
+    cupomApi.getCupom(date).then(result =>{
 
       //Mostra as informações
       $scope.cupons = result;
+    }).catch((error) => {
+      alert(error);
     });
   }
 
@@ -53,10 +59,12 @@ angular.module("cupom").controller("cupomCtrl", function($scope, $rootScope, bot
   var getChave = function(date){
 
     //Delimita ou não a data das chaves
-    cupomApi.getChave(date).success(result =>{
+    cupomApi.getChave(date).then(result =>{
 
       //Mostra as informações
       $scope.chaves = result;
+    }).catch((error) => {
+      alert(error);
     });
   }
 
