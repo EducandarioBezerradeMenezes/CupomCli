@@ -4,7 +4,7 @@
   "description": "Frontend to CupomBot",
   "main": "index.js",
   "scripts": {
-    "start": "http-server -p 7654"
+    "start": "lite-server"
   },
   "keywords": [
     "cupom",
@@ -13,6 +13,6 @@
   "author": "Mateus Oliveira Carvalho",
   "license": "ISC",
   "dependencies": {
-    "http-server": "^0.9.0"
+    "lite-server": "^2.2.2"
   }
 }
