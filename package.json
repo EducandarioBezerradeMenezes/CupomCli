@@ -13,6 +13,6 @@
   "author": "Mateus Oliveira Carvalho",
   "license": "ISC",
   "dependencies": {
-    "http-server": "^0.9.0"
+    "http-server": "0.9.0"
   }
 }
